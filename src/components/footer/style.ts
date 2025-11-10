@@ -1,0 +1,1 @@
+export const textStyle = { variant: "h6" as const, fontWeight: 750 }
