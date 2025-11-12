@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next"
 // componets
 import { Box, Typography, Divider, IconButton } from "@mui/material"
 import Calender from "../common/calendar"
+import LangSelectionList from '../common/langSelectionList'
 
 // style
 import { contentCenter } from "../../assets/style/common"
@@ -19,7 +20,7 @@ const Footer = () => {
         <Box {...footerStyle}>
             <Box flex={1}>
                 <IconButton color="error">
-                    <PublicRoundedIcon fontSize="large"/>
+                    <PublicRoundedIcon fontSize="large" />
                 </IconButton>
             </Box>
             <Box flex={3} {...contentCenter}>
@@ -31,6 +32,9 @@ const Footer = () => {
             <Box flex={1} {...contentCenter}>
                 <Calender />
             </Box>
+
+            <LangSelectionList/>
+            
         </Box>
     )
 }
