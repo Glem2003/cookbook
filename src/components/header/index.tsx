@@ -1,29 +1,43 @@
+import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
+
+// components
 import { Box, AppBar, Toolbar, MenuItem } from "@mui/material"
 
 //style
-import { contentRight, contentLeft } from "../../assets/style/common"
+import { contentLeft, contentRight } from "../../assets/style/common"
+import { navStyle, itemStyle, menuBarStyle, headerStyle, iconStyle } from './style'
 
 // icon
 import { DinnerDiningIcon } from '../../assets/icon/index'
 
+// data
+import { menu } from '../../data/headerNav'
+
 const Header = () => {
+
+    const { t } = useTranslation()
+
     return (
-        <Box display={'flex'} height={'100%'}>
-            <AppBar sx={{ height: 80, pt: 1 }} color="error" >
+        <Box {...headerStyle}>
+            <AppBar {...menuBarStyle}>
                 <Toolbar>
-                    <Box {...contentLeft} border={'1px solid white'}>
-                        <DinnerDiningIcon sx={{ fontSize: 60 }} />
-                    </Box>
-                    <Box flex={'auto'} component={'nav'} {...contentRight} gap={2}>
-                        <MenuItem>
-                            A
-                        </MenuItem>
-                        <MenuItem>
-                            B
-                        </MenuItem>
-                        <MenuItem>
-                            C
-                        </MenuItem>
+                    <Link to={'/'}>
+                        <Box {...contentLeft}>
+                            <DinnerDiningIcon sx={iconStyle} />
+                        </Box>
+                    </Link>
+                    <Box {...navStyle} {...contentRight}>
+                        {menu?.map((item, index) => {
+                            return (
+                                <Link to={`/${item.text}`}>
+                                    <MenuItem sx={itemStyle} key={index} >
+                                        <item.icon />
+                                        <Link to={'#'}></Link>{t(item.text).toUpperCase()}
+                                    </MenuItem>
+                                </Link>
+                            )
+                        })}
                     </Box>
                 </Toolbar>
             </AppBar>
