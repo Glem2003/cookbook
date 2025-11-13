@@ -14,9 +14,14 @@ import { DinnerDiningIcon } from '../../assets/icon/index'
 // data
 import { menu } from '../../data/headerNav'
 
+// hooks
+import useBreakPoint from "../../hooks/useBreakPoint"
+
 const Header = () => {
 
     const { t } = useTranslation()
+
+    const { isMobile } = useBreakPoint()
 
     return (
         <Box {...headerStyle}>
@@ -33,7 +38,7 @@ const Header = () => {
                                 <Link to={`/${item.text}`}>
                                     <MenuItem sx={itemStyle} key={index} >
                                         <item.icon />
-                                        <Link to={'#'}></Link>{t(item.text).toUpperCase()}
+                                        {isMobile ? '' : t(item.text).toUpperCase()}
                                     </MenuItem>
                                 </Link>
                             )

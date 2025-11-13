@@ -1,5 +1,7 @@
 {
-    "copyright":"copyright",
-    "generalList":"general list",
-    "warehouse":"warehouse"
+    "copyright": "copyright",
+    "generalList": "general list",
+    "warehouse": "warehouse",
+    "language": "language",
+    "settings": "settings"
 }

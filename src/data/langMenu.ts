@@ -1,0 +1,4 @@
+export const langMenu = [
+    { text: "English", value: 'en' },
+    { text: "繁體中文", value: 'zh-TW' },
+]

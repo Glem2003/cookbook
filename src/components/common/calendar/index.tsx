@@ -4,7 +4,7 @@ import './style.sass'
 // utils
 import getToday from '../../../utils/getToday'
 
-const Calender = () => {
+const Calendar = () => {
 
     const { year, month, day, hour } = getToday()
 
@@ -27,4 +27,4 @@ const Calender = () => {
     )
 }
 
-export default Calender
+export default Calendar
