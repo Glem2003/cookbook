@@ -23,9 +23,9 @@ import capitalize from '../../../utils/capitalize'
 
 const LangSelectionItem: React.FC<langSelectionItemType> = (props) => {
 
-    const { open, onToggle, onClose } = props
+    const { open, onToggle, onClose, handleBtn, loading } = props
 
-    const { isLang, isLoad, handleActive } = useLangSettingMenu()
+    const { isLang } = useLangSettingMenu()
 
     const { t } = useTranslation()
 
@@ -49,8 +49,8 @@ const LangSelectionItem: React.FC<langSelectionItemType> = (props) => {
                             variant={isLang == item.value ? "text" : "contained"}
                             key={item.value}
                             disabled={isLang == item.value}
-                            onClick={() => handleActive(item.value)}
-                            loading={isLoad}
+                            onClick={() => handleBtn(item.value)}
+                            loading={loading}
                             color="warning"
                         >
                             {item.text}

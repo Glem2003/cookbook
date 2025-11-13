@@ -6,7 +6,8 @@ import type { State, Action } from './type'
 export const initState = {
     isLang: i18n.language,
     isShow: false,
-    isLoad: false
+    isLoad: false,
+    isMessageShow: false
 }
 
 export const reducer = (state: State, action: Action) => {
@@ -22,7 +23,7 @@ export const reducer = (state: State, action: Action) => {
         case "ACTIVE":
             return { ...state, isLoad: true }
         case "DONE":
-            return { ...state, isLoad: false }
+            return { ...state, isLoad: false, isMessageShow: true }
 
         default:
             return state

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 
 // componets
-import { Box, Typography, Divider, IconButton } from "@mui/material"
+import { Box, Typography, Divider, IconButton, Snackbar } from "@mui/material"
 import Calendar from "../common/calendar"
 import LangSelectionItem from '../common/langSelectionList'
 
@@ -20,8 +20,17 @@ const Footer = () => {
 
     const { t } = useTranslation()
 
-    const { handleClose, handleToggle, isShow } = useLangSettingMenu()
+    const {
+        isShow,
+        isLoad,
+        isMessageShow,
+        handleClose,
+        handleToggle,
+        handleActive
+    } = useLangSettingMenu()
     const { isTablet, isMobile } = useBreakPoint()
+
+    console.log(isMessageShow)
 
     return (
         <Box
@@ -55,10 +64,17 @@ const Footer = () => {
 
             <LangSelectionItem
                 open={isShow}
+                loading={isLoad}
                 onToggle={handleToggle}
                 onClose={handleClose}
+                handleBtn={handleActive}
             />
 
+            <Snackbar
+                open={isMessageShow}
+                message="Change"
+            />
+            
         </Box>
     )
 }

@@ -26,6 +26,7 @@ const useLangSettingMenu = () => {
         isLang: i18n.language,
         isShow: state.isShow,
         isLoad: state.isLoad,
+        isMessageShow: state.isMessageShow,
         handleActive,
         handleToggle,
         handleClose
