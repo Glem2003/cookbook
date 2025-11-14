@@ -37,7 +37,9 @@ const LangSelectionItem: React.FC<langSelectionItemType> = (props) => {
             maxWidth='lg'
         >
             <DialogTitle sx={{ ...contentCenter, justifyContent: 'space-between' }}>
-                <Typography variant="h6">{capitalize(t("language"))} {capitalize(t("settings"))}</Typography>
+                <Typography variant="h6">
+                    {`${capitalize(t("language"))}${isLang == 'en' ? ' ' : ''}${capitalize(t("settings"))}`}
+                </Typography>
                 <IconButton onClick={onToggle}>
                     <CloseIcon />
                 </IconButton>

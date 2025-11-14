@@ -25,6 +25,10 @@ export const reducer = (state: State, action: Action) => {
         case "DONE":
             return { ...state, isLoad: false, isMessageShow: true }
 
+        // message
+        case "HIDE":
+            return { ...state, isMessageShow: false }
+
         default:
             return state
     }

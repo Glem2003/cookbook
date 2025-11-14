@@ -10,6 +10,7 @@ const useLangSettingMenu = () => {
 
     const [state, dispatch] = useReducer(reducer, initState)
 
+    // main
     const handleActive = (lang: string) => {
         dispatch({ type: "ACTIVE" })
 
@@ -18,9 +19,11 @@ const useLangSettingMenu = () => {
             dispatch({ type: "DONE" })
         }, 1000)
     }
-
     const handleToggle = () => dispatch({ type: "TOGGLE" })
     const handleClose = () => dispatch({ type: "CLOSE" })
+
+    // message box
+    const handleHide = () => dispatch({ type: "HIDE" })
 
     return {
         isLang: i18n.language,
@@ -29,7 +32,8 @@ const useLangSettingMenu = () => {
         isMessageShow: state.isMessageShow,
         handleActive,
         handleToggle,
-        handleClose
+        handleClose,
+        handleHide
     }
 
 }

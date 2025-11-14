@@ -10,3 +10,4 @@ export type Action =
     | { type: "CLOSE" }
     | { type: "ACTIVE" }
     | { type: "DONE" }
+    | { type: "HIDE" }

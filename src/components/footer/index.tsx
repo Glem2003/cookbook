@@ -16,21 +16,24 @@ import { CopyrightRoundedIcon, PublicRoundedIcon } from '../../assets/icon/index
 import useLangSettingMenu from "../../hooks/useLangSettingMenu"
 import useBreakPoint from "../../hooks/useBreakPoint"
 
+// utils
+import capitalize from "../../utils/capitalize"
+
 const Footer = () => {
 
     const { t } = useTranslation()
 
     const {
+        isLang,
         isShow,
         isLoad,
         isMessageShow,
         handleClose,
         handleToggle,
-        handleActive
+        handleActive,
+        handleHide
     } = useLangSettingMenu()
     const { isTablet, isMobile } = useBreakPoint()
-
-    console.log(isMessageShow)
 
     return (
         <Box
@@ -72,9 +75,13 @@ const Footer = () => {
 
             <Snackbar
                 open={isMessageShow}
-                message="Change"
+                message={`
+                ${capitalize(t("language"))}${isLang == 'en' ? ' ' : ''}${capitalize(t("changes"))}`
+                }
+                onClose={handleHide}
+                autoHideDuration={3000}
             />
-            
+
         </Box>
     )
 }
