@@ -7,7 +7,6 @@ import Footer from "../../footer";
 import type { DefaultPagesTypes } from "./type";
 
 // style
-import { contentCenter } from "../../../assets/style/common";
 import { bodyStyle, headerStyle, mainStyle, footerStyle } from './style'
 
 const DefaultPages: React.FC<DefaultPagesTypes> = ({ children }) => {
@@ -17,7 +16,7 @@ const DefaultPages: React.FC<DefaultPagesTypes> = ({ children }) => {
       <Grid {...headerStyle}>
         <Box component={'header'} height={'100%'}><Header /></Box>
       </Grid>
-      <Grid {...mainStyle} {...contentCenter}>
+      <Grid {...mainStyle}>
         <Box component={'main'}>{children}</Box>
       </Grid>
       <Grid {...footerStyle}>

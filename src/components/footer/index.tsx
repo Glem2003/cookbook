@@ -76,7 +76,7 @@ const Footer = () => {
             <Snackbar
                 open={isMessageShow}
                 message={`
-                ${capitalize(t("language"))}${isLang == 'en' ? ' ' : ''}${capitalize(t("changes"))}`
+                ${capitalize(t("language"))}${isLang == 'en' ? ' ' : ''}${capitalize(t("changed"))}`
                 }
                 onClose={handleHide}
                 autoHideDuration={3000}
